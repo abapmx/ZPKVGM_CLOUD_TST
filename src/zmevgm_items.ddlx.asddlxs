@@ -1,0 +1,56 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Item Electrónica',
+    typeNamePlural: 'Items Electrónica',
+    typeImageUrl: '',
+    imageUrl: 'URL',
+    title: {
+        type: #STANDARD,
+        criticalityRepresentation: #WITHOUT_ICON
+    },
+    description: {
+        type: #STANDARD,
+        criticalityRepresentation: #WITHOUT_ICON
+    }
+}
+annotate entity zcdsvgm_items with
+{
+  @UI.facet: [
+  {
+      id: 'DetalleItem',
+      position: 10,
+      label: 'Detalle Item',
+      type: #COLLECTION
+  },
+  {
+      id: 'Item',
+      parentId: 'DetalleItem',
+      label: 'Detalles',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'DetalleItem',
+      position: 10
+  }
+  ]
+
+  //   //Ocultar campos
+  //   @UI.hidden: true
+  //   client;
+
+  @UI.lineItem: [{ position: 10, importance: #HIGH }]
+  IdItem;
+  @UI.lineItem: [{ position: 20, importance: #HIGH }]
+  Descr;
+  @UI.lineItem: [{ position: 30, importance: #HIGH }]
+  Stock;
+  @UI.lineItem: [{ position: 40, importance: #HIGH, criticality: 'Status' }]
+  Status;
+
+  @UI.fieldGroup: [{ qualifier: 'DetalleItem', position: 10 }]
+  AdcDesc;
+  @UI.fieldGroup: [{ qualifier: 'DetalleItem', position: 20 }]
+  Color;
+  @UI.fieldGroup: [{ qualifier: 'DetalleItem', position: 30 }]
+  Pieces;
+
+
+}

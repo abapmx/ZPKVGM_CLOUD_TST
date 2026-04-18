@@ -1,0 +1,4 @@
+@EndUserText.label: 'ITEMS - Service Definition'
+define service ZSDVGM_ITEMS {
+  expose zcdsvgm_items;
+}

@@ -1,4 +1,4 @@
-CLASS zcl_01_helloworld_vgm DEFINITION
+CLASS zcl_01_hlp_vgm DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,10 +12,15 @@ ENDCLASS.
 
 
 
-CLASS zcl_01_helloworld_vgm IMPLEMENTATION.
+CLASS zcl_01_hlp_vgm IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
-    out->write( 'Hola ABAP Cloud' ).
+
+    DATA(lv_txt) = 'h' && 'h'.
+    out->write( lv_txt ).
+
+
+
   ENDMETHOD.
 ENDCLASS.
